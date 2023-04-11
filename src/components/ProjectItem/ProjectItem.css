@@ -1,0 +1,10 @@
+.project-card {
+    margin:70px;
+    width: 50rem !important;
+    border: none !important;
+}
+
+.card-title {
+    font-size: 3rem !important;
+    font-family:' montserrat';
+}
