@@ -18,23 +18,163 @@ const ColorVisualiser = () => {
     formData.append("room_image", fileInput.current.files[0]);
     console.log(fileInput.current.files[0]);
     setFile(fileInput.current.files[0]);
-    formData.append("vectorized", false);
-    axios({
-      method: "POST",
-      url: "https://pim-client.wizart.ai/vision-api/v3/interior",
-      data: formData,
-      headers: {
-        Authorization:
-          "QwwG6B6PKrF42nWPuDIcYygYHaTyaL1nGibu9Qo0qkzovrypYKA3AFztegjV",
-      },
-    })
-      .then((res) => {
-        setResult(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    formData.append("vectorized", true);
+    // axios({
+    //   method: "POST",
+    //   url: "https://pim-client.wizart.ai/vision-api/v3/interior",
+    //   data: formData,
+    //   headers: {
+    //     Authorization:
+    //       "N8TWHGEzPZHML1c936KPswO5oIukJfIwMwAApgyfyZdEBp5rdaXLHODsKIjN",
+    //   },
+    // })
+    
+    //   .then((res) => {
+       
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
     // localStorage.setItem("Result", JSON.stringify(result));
+    setResult({
+      detection: {
+        "floor": {
+          "points": []
+        },
+        "ceiling": {
+          "points": []
+        },
+        "windows": [
+          {
+            "points": [
+              {
+                "x": 0,
+                "y": 0.9248046875
+              },
+              {
+                "x": 0.08203125,
+                "y": 0.0712890625
+              },
+              {
+                "x": 0.076171875,
+                "y": 0.8291015625
+              },
+              {
+                "x": 0.14453125,
+                "y": 0.822265625
+              }
+            ]
+          },
+          {
+            "points": [
+              {
+                "x": 0.89453125,
+                "y": 0.138671875
+              },
+              {
+                "x": 0.921875,
+                "y": 0.791015625
+              }
+            ]
+          }
+        ],
+        "walls": [
+          {
+            "cx": 9.750193552254073,
+            "wall_id": 0,
+            "cy": 49.97713271885702,
+            "points": [
+              {
+                "x": 0,
+                "y": 1
+              },
+              {
+                "x": 0.004042451535478962,
+                "y": 1
+              },
+              {
+                "x": 0.11051613092422485,
+                "y": 0.8556772470474243
+              },
+              {
+                "x": 0.10947712510824203,
+                "y": 0.11232876777648926
+              },
+              {
+                "x": 0.03466775698722397,
+                "y": 0
+              },
+              {
+                "x": 0,
+                "y": 0
+              },
+              {
+                "x": 0,
+                "y": 1
+              }
+            ]
+          },
+          {
+            "cx": 52.676730685763886,
+            "wall_id": 1,
+            "cy": 45.56474659540882,
+            "points": [
+              {
+                "x": 0.11051613092422485,
+                "y": 0.8556772470474243
+              },
+              {
+                "x": 0.9147694706916809,
+                "y": 0.8490987420082092
+              },
+              {
+                "x": 0.9117646813392639,
+                "y": 0.1068493127822876
+              },
+              {
+                "x": 0.10947712510824203,
+                "y": 0.11232876777648926
+              },
+              {
+                "x": 0.11051613092422485,
+                "y": 0.8556772470474243
+              }
+            ]
+          },
+          {
+            "cx": 95.78258040683721,
+            "wall_id": 2,
+            "cy": 43.986920918503856,
+            "points": [
+              {
+                "x": 0.9147694706916809,
+                "y": 0.8490987420082092
+              },
+              {
+                "x": 1,
+                "y": 0.9415124906509201
+              },
+              {
+                "x": 1,
+                "y": 0
+              },
+              {
+                "x": 0.997794116930377,
+                "y": 0
+              },
+              {
+                "x": 0.9117646813392639,
+                "y": 0.1068493127822876
+              },
+              {
+                "x": 0.9147694706916809,
+                "y": 0.8490987420082092
+              }
+            ]
+          }
+        ]
+      }
+    });
   };
 
   return (
