@@ -52,7 +52,7 @@ Then run flask app
 
 **Client:** ReactJS, Bootstrap
 
-**Server:** Wizart API, Image processing
+**Server:** Image processing
 
 
 
