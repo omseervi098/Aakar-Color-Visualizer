@@ -11,26 +11,25 @@ const DisplayImg = (props) => {
   const [imgWidth, setImgWidth] = React.useState(0);
   const [imgHeight, setImgHeight] = React.useState(0);
   const [parentWidth, setParentWidth] = React.useState(0);
+
   //Get image width and height
   useEffect(() => {
     const img = new Image();
     img.src = URL.createObjectURL(props.file);
-    img.onload = () => {  
+    img.onload = () => {
       setImgWidth(img.width);
       setImgHeight(img.height);
     };
     // get width of parent container
-    
   }, [props.file]);
 
   // Get width of parent container when window is resized
   useEffect(() => {
     const handleResize = () => {
-      if($("#img1container").width() >991){
+      if ($("#img1container").width() > 991) {
         setParentWidth(991);
-      }else
-      setParentWidth($("#img1container").width());
-    };  
+      } else setParentWidth($("#img1container").width());
+    };
     window.addEventListener("resize", handleResize);
     handleResize();
     return () => window.removeEventListener("resize", handleResize);
@@ -50,24 +49,59 @@ const DisplayImg = (props) => {
   return (
     <div className="container-fluid displayimg">
       <div className="row">
-        <div className="col-12" id="img1container">
+        <div className="col-12" id="img1container" >
           {loaded && (
-            <ImageMapper
-              src={URL.createObjectURL(props.file)}
-              map={MAP}
-              fillColor="rgba(0,0,0,1)"
-              strokeColor="rgba(0,0,0,1)"
-              lineWidth={2}
-              id="img1"
-              responsive={true}
-              toggleHighlighted={true}
-              parentWidth={parentWidth}
-              onClick={(area) => {
-                props.coloringWall(area.coords);
-              }}
-            />
+            <>
+              {!props.fresult && (
+                console.log("from display img", props.file),
+                <ImageMapper
+                  src={URL.createObjectURL(props.file)
+                  }
+                  // src={props.file}
+                  map={MAP}
+                  
+                  fillColor="rgba(0,0,0,1)"
+                  strokeColor="rgba(0,0,0,1)"
+                  lineWidth={2}
+                  id="img1"
+                  responsive={true}
+                  toggleHighlighted={true}
+                  parentWidth={parentWidth}
+                  onClick={(area) => {
+                    console.log(area);
+                    props.coloringWall(area.poly,false);
+                  }}
+                />
+              )}
+              {props.fresult && (
+                <ImageMapper
+                  src={props.fresult}
+                  map={MAP}
+                  fillColor="rgba(0,0,0,1)"
+                  strokeColor="rgba(0,0,0,1)"
+                  
+                  lineWidth={2}
+                  id="img2"
+                  responsive={true}
+                  toggleHighlighted={true}
+                  parentWidth={parentWidth}
+                  onClick={(area) => {
+                    console.log(area);
+                    props.coloringWall(area.poly,true);
+                  }}
+                />
+              )}
+              {props.apply && (
+                <div className="loader_container">
+                  <div className="img1__loader">
+                    <div className="spinner-border text-danger" role="status">
+                      <span className="visually-hidden">Loading...</span>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </>
           )}
-          <img src={props.fresult} alt="" />
         </div>
       </div>
     </div>

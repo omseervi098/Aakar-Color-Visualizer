@@ -46,13 +46,14 @@ function Contact() {
       alert("Message sent!");
   };
     return (
-        <Container fluid className="p-0">
-          <h1 className="contact-title">Contact Us</h1>
-          <h2 className="contact-subtitle">for a free estimate</h2>
-          <Container className=" contact-form">
-              <form className="needs-validation" onSubmit={onSubmit} novalidate>
+        
+        <Container fluid className="p-0 py-4 ">
+          <h2 className="contact-subtitle text-center">Any questions? Contact us!</h2>
+
+          <Container className=" contact-form ">
+              <form className="needs-validation " onSubmit={onSubmit} novalidate>
                   <Container className="mb-3">
-                      <label for="validationCustom01" className="form-label p-text">Your name</label>
+                      <label for="validationCustom01" className="form-label p-text">Your Name: </label>
                       <input
                           type="text"
                           name="user_name"
@@ -60,7 +61,7 @@ function Contact() {
                           id="validationCustom01"
                           value={toSend.user_name}
                           onChange={handleChange}
-                          placeholder="name"
+                          placeholder="Name"
                           required
                       />
                   </Container>

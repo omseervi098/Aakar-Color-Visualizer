@@ -57,6 +57,7 @@ def wallCl():
 @app.route("/segmentdetect",methods=['POST','GET'])
 def wallDetect():
     img = request.files['img']
+    
     filename = secure_filename(img.filename)
     filename1 = filename.replace('.jpg','-') + str(uuid.uuid1()) + '.jpg'
     originalImgUrl = uploadImg(img,filename1)
@@ -73,6 +74,11 @@ def wallDetect():
 
 @app.route("/color",methods=['POST','GET'])
 def segmentColor():
+    # print("Hello",request.form['img'])
+    # if(request.form['img']!=None):
+    #     originalImgUrl=request.form['img']
+    #     filename=originalImgUrl.split("/")[-1]
+    # else:
     img = request.files['img']
     filename = secure_filename(img.filename)
     filename1 = filename.replace('.jpg','-') + str(uuid.uuid1()) + '.jpg'
@@ -80,9 +86,11 @@ def segmentColor():
     originalImgUrl = originalImgUrl+".jpg"
     coords = request.form['coords']
     coords=ast.literal_eval(coords)
+    print(originalImgUrl)
     print(coords)
     segment = request.form['segment']
     newCl = request.form['newCl']
+    
     img1 =segment_color(originalImgUrl,coords,segment,newCl)
     _, img_new = cv2.imencode('.jpg', img1)
     img_new=img_new.tobytes()

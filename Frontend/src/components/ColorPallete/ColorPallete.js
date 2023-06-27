@@ -9,12 +9,11 @@ const ColorPallete = (props) => {
       height={props.height}
       width={props.width}
       color={props.color}
-      onChange={(color) => {
-        props.setColor(color);
-      }}
+      onChange={props.setColor}
       hideHSV
-
+      hideHEX
       dark
+      
     />
   );
 };

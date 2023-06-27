@@ -51,7 +51,7 @@ def wall_detects(img,segment,new_color):
     arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
     image = cv2.imdecode(arr, -1)
     client = vc(
-        token="N8TWHGEzPZHML1c936KPswO5oIukJfIwMwAApgyfyZdEBp5rdaXLHODsKIjN"
+        token="XvdISKG2PoDwhog8LQJOGmXzaNjwJMxu6DcBZ0EYHtTGf9xb8BCQcAh5EpCL"
     )
     mask = client.segmentation(
         resource=img,
@@ -72,8 +72,9 @@ def segment_color(img,points,segment,new_color):
     arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
     image = cv2.imdecode(arr, -1)
     client = vc(
-        token="N8TWHGEzPZHML1c936KPswO5oIukJfIwMwAApgyfyZdEBp5rdaXLHODsKIjN"
+        token="XvdISKG2PoDwhog8LQJOGmXzaNjwJMxu6DcBZ0EYHtTGf9xb8BCQcAh5EpCL"
     )
+    print(img,segment,points)
     mask1 = client.segmentation(
         resource=img,
         feature=vc.feature[segment]
@@ -85,6 +86,7 @@ def segment_color(img,points,segment,new_color):
             coords.append((coord_x,coord_y))
     poly=Polygon(coords)
     newcl = list(map(int,new_color.split(",")))
+    print(newcl)
     for i in range(m):
         for j in range(n):
             if(poly.contains(Point(j,i))==True):

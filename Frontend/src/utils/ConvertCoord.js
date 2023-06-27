@@ -1,7 +1,6 @@
 import ConvertAgain from "./ConvertAgain";
 const ConvertCoord = (result, w, h) => {
   if (result) {
-    console.log("from ConvertCOORD", result);
     const detection = result;
     const ceiling = detection.ceiling;
     const floor = detection.floor;
@@ -14,7 +13,7 @@ const ConvertCoord = (result, w, h) => {
     });
     let floorpoly = [];
     floor.points.forEach((point) => {
-      floorpoly.push([point.x * w, point.y * h]);
+      floorpoly.push([point.x, point.y ]);
     });
     let ceilingcoords = [];
     ceiling.points.forEach((point) => {
@@ -23,7 +22,7 @@ const ConvertCoord = (result, w, h) => {
     });
     let ceilingpoly = [];
     ceiling.points.forEach((point) => {
-      ceilingpoly.push([point.x * w, point.y * h]);
+      ceilingpoly.push([point.x , point.y]);
     });
     let wallscoords = [];
     let wallspoly = [];
@@ -39,7 +38,7 @@ const ConvertCoord = (result, w, h) => {
         wallscoords.push(temp);
         let temp2 = [];
         wall.points.forEach((point) => {
-          temp2.push([point.x * w, point.y * h]);
+          temp2.push([point.x , point.y ]);
         });
         wallspoly.push(temp2);
       });
@@ -54,7 +53,7 @@ const ConvertCoord = (result, w, h) => {
         windowscoords.push(temp);
         let temp2 = [];
         window.points.forEach((point) => {
-          temp2.push([point.x * w, point.y * h]);
+          temp2.push([point.x , point.y ]);
         });
         windowspoly.push(temp2);
       });

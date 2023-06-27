@@ -7,7 +7,7 @@ import ProjectItem from "../../components/ProjectItem/ProjectItem";
 import { NavLink } from "react-router-dom";
 import Testimonials from "../../components/Testimonial/Testimonials";
 import data from "./data.json";
-
+import Hindilogo from "../../assets/Hindilogo.png";
 // import WallPaint from "../../components/wall/WallPaint";
 
 function Home() {
@@ -20,16 +20,21 @@ function Home() {
       >
         <Container className="parallax-text">
           <Container className="parallax-title text-center">
-            <img src="../../assets/logo.svg" alt="AAkar" />
+            <img src={Hindilogo} alt="AAkar" />
           </Container>
         </Container>
       </Parallax>
-      <Container fluid className="features-list py-5 text-center col-md-8">
-        <h1 className="text-center projects-title">Welcome to the new era of product visualization</h1>
-        <h3>
-          Revolutionizing the way retailers and manufacturers sell finishing and
-          home decor products with cutting-edge product visualization tools.
-        </h3>
+      <Container fluid className="features-list py-5 text-center ">
+        <Container className="col-md-10 mx-auto px-4">
+          <h1 className="text-center projects-title">
+            Welcome to the new era of product visualization
+          </h1>
+          <h3>
+            Revolutionizing the way retailers and manufacturers sell finishing
+            and home decor products with cutting-edge product
+            visualization tools.
+          </h3>
+        </Container>
       </Container>
       <Container fluid className="projects-list">
         <h1 className="text-center projects-title">Our projects</h1>

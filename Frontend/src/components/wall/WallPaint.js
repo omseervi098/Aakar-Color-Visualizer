@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import EyeDropper from 'react-eyedropper';
-import room from "./light-airy-palette2-asian-paints.png"
+import room from "../../assets/living.jpg";
 
 const Wallpaint = () => {
     const [color, setColor] = useState({ r: 255, g: 255, b: 255 });
@@ -10,12 +10,12 @@ const Wallpaint = () => {
     };
 
     const { r, g, b } = color;
-const WallPaint = () => {
-    const [state, setState] = useState({
-        r: 255,
-        g: 255,
-        b: 255
-    })
+// const WallPaint = () => {
+//     const [state, setState] = useState({
+//         r: 255,
+//         g: 255,
+//         b: 255
+//     })
     return (
         <div>
             <div className="main">

@@ -6,12 +6,12 @@ footer {
 footer .logo a{
   text-decoration: none;
   color:white;
-  font-size: 3rem;
+  font-size: 3.5rem;
 }
 footer .footer__container {
   padding-top: 50px;
-  padding-bottom: 120px;
-  width: 80%;
+  padding-bottom: 80px;
+  width: 70%;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -99,7 +99,7 @@ footer .footer__container .footer__lists__container .footer__list li {
 }
 
 footer .footer__container .footer__lists__container .footer__list li:hover {
-  color: #2acfcf;
+  color: #259de7;
 }
 
 @media screen and (max-width: 550px) {

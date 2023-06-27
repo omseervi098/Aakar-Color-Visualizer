@@ -271,10 +271,14 @@ const FileUpload = (props) => {
           </div>
         </div>
       </div>
-      <form onSubmit={(e)=>{
-        e.preventDefault();
-        props.getSegmentation(e);
-      }} className="">
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          if (props.walldecor) props.uploadFile(e);
+          else props.getSegmentation(e);
+        }}
+        className=""
+      >
         <button type="submit" className="btn btn-primary mt-4">
           Submit
         </button>

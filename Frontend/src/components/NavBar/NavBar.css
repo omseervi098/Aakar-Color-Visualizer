@@ -1,9 +1,18 @@
 .navbar-brand {
-    font-family: 'montserrat';
+    font-family: 'montserrat' !important;
     color: #2B2B2B;
+    font-size: 1.8rem !important;
+    font-weight: 900 !important;
 }
 
 .nav-link {
-    font-family: 'montserrat';
+font-family: 'montserrat';
     color: #2B2B2B;
+}
+nav{
+   background: linear-gradient(to right, #f9fbff, #cae4fe);
+}
+nav a{
+    font-size: large !important;
+    font-weight: 510 !important;
 }

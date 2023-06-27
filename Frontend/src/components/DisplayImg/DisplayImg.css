@@ -1,0 +1,34 @@
+
+@-webkit-keyframes spin {
+	from {-webkit-transform:rotate(0deg);}
+	to {-webkit-transform:rotate(360deg);}
+}
+
+@keyframes spin {
+	from {transform:rotate(0deg);}
+	to {transform:rotate(360deg);}
+}
+.displayimg{
+    position: relative;
+}
+
+
+.img1__loader{
+    z-index: 9999;
+    position: absolute;
+   
+    top: 48%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+} 
+.spinner-border{
+    width: 3rem;
+    height: 3rem;
+    border-width: 1rem;
+    margin: 0 auto;
+   
+}
+.img-mapper-img{
+    border-radius: 20px !important;
+}
