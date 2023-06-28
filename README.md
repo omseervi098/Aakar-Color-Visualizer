@@ -1,7 +1,7 @@
 
 # AAkar
 
-- A ```Color Visualizer``` where users can upload image of the room and can try different suggested colors.
+- A ```Color Visualizer``` where users can upload image of the room and can try different colors.
 - This Project was built during 24 hour hackathon codeshashtra 9.0 organised by DJCSI.
 
 
