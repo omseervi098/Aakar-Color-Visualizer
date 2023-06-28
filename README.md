@@ -50,9 +50,9 @@ Then run flask app
 
 ## Tech Stack
 
-**Client:** ReactJS, Bootstrap
+**Client:** ReactJS, Bootstrap, Image Mapping
 
-**Server:** Image processing
+**Server:** Flask,Image processing
 
 
 
