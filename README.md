@@ -9,9 +9,8 @@
 ## Features
 
 - Segmentation of ```walls```, ```floor```, ```ceiling``` using wizart api.
-- Detect wall colors and suggesting suitable colors.
-- Works accurately on almost images.
- 
+- Detecting Different walls in one image and applying selected colour from color pallete
+
 
 ## Run Locally
 
