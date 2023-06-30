@@ -8,7 +8,7 @@
 
 ## Features
 
-- Segmentation of ```walls```, ```floor```, ```ceiling``` using wizart api.
+- Segmentation of ```walls```, ```floor```, ```ceiling``` using api.
 - Detecting Different walls in one image and applying selected colour from color pallete
 
 
