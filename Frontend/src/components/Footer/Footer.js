@@ -77,14 +77,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer__bottom mb-0">
-        <p className="text-center text-white m-0 pb-0">
-          Made with <span className="text-danger">❤</span> by Omprakash
-          Choudhary
-        </p>
+     
         <p className="text-center text-white m-0 pb-4">
-          <a href="https://omprakash.me" className="text-decoration-none" target="_blank" rel="noreferrer">
-            omprakash.me
-          </a>
+            ©2023 Aakar,Inc. All rights reserved.
         </p>
       </div>
     </footer>
